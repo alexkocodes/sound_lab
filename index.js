@@ -1,19 +1,12 @@
-
-// const sampler = new Tone.Sampler({
-// 	urls: {
-// 		C4: "C.mp3",
-// 		D4: "D.mp3",
-//         E4: "E.mp3",
-//         F4: "F.mp3",
-//         G4: "G.mp3",
-// 	},
-// 	baseUrl: "./sounds"
-// }).toDestination();
-
-const player = new Tone.Player("C.mp3").toDestination();
+const player1 = new Tone.Player("C.mp3").toDestination();
+const player2 = new Tone.Player("D.mp3").toDestination();
+const player3 = new Tone.Player("E.mp3").toDestination();
+const player4 = new Tone.Player("F.mp3").toDestination();
+const player5 = new Tone.Player("G.mp3").toDestination();
 Tone.loaded().then(() => {
-	document.querySelectorAll(".cat")[0].addEventListener("click", function(event){
-        player.start();
-        console.log("clicked");
-    })
+    for (let i=1; i<=5; i++){
+        document.querySelectorAll(".cat")[i-1].addEventListener("click", function(event){
+            `player${i}`.start();
+        })
+    }
 });
