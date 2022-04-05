@@ -8,7 +8,7 @@ let players = [player1, player2, player3, player4, player5];
 Tone.loaded().then(() => {
     for (let i=1; i<=5; i++){
         document.querySelectorAll(".cat")[i-1].addEventListener("click", function(event){
-            players[i].start();
+            players[i-1].start();
         })
     }
 });
